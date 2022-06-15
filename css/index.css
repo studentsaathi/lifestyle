@@ -1,0 +1,61 @@
+.runoffer{
+    height: auto;
+    width: 90%;
+    margin: auto;
+    
+}
+.runoffer>img{
+    width: 100%;
+}
+.babyoffer{
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+
+
+
+}
+.babyoffer>div{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 30px;
+    text-align: center;
+    font-weight: bolder;
+    color: aliceblue;
+}
+.babyoffer>div>h1{
+    padding-top: 10px;
+    font-size: 55px;
+}
+.babyoffer>div>p{
+    color: black;
+    font-size: 23px;
+}
+.childrenoffer{
+    height: auto;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    
+}
+.childrenoffer>img{
+    width: 470px;
+}
+.tradingstyle{
+    height: auto;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+
+}
+.tradingstyle>img{
+    width: 470px;
+}
+.lmsin>img{
+    width: 33.3%;
+    
+}

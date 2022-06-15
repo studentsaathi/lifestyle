@@ -1,0 +1,50 @@
+.footer1{
+    width: 80%;
+    margin-left: 290px;
+
+}
+.barcode{
+    display: flex;
+    gap: 100px;
+
+}
+.footbarshop{
+    display: flex;
+    gap: 90px;
+}
+#footinput{
+    height: 40px;
+    width: 330px;
+    background-color: rgba(199, 196, 193, 0.205);
+}
+#Subscribe{
+    height: 46px;
+    width: 160px;
+    background-color: rgb(1, 1, 19);
+    color: aliceblue;
+}
+.footbarshop>div>h1{
+    font-size: 25px;
+    color: black;
+
+}
+.pai{
+    height: 2px;
+    width: 85%;
+    background-color: black;
+}
+.barcode>div>i{
+    font-size: 70px;
+    margin-left: 80px;
+}
+.ajeet>a{
+    display: flex;
+    text-decoration: none;
+    color: crimson;
+}
+.ajeet>a>img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 3px solid black;
+}

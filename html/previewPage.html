@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Navbar</title>
+    <!-- <link rel="stylesheet" href="./style/nav.css"> -->
+    <script src="https://kit.fontawesome.com/cd2d18a745.js" crossorigin="anonymous"></script>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    
+</head>
+<link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="https://kit.fontawesome.com/9f2faa6495.js" crossorigin="anonymous"></script>
+<style>
+    /* div{
+   border:solid 1px black;
+} */
+
+#main{
+    display:flex;
+    justify-content: space-evenly;
+    padding: 15px; 
+     height:850px;
+    
+    
+
+} 
+#clicked_data{
+   
+ width:50%;
+ padding: 25px;
+ display: grid;
+ 
+
+
+
+
+}
+#clicked_data>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+}
+#clicked_data>div >img{
+    height: 400px;
+    width: 350px;
+    
+    margin-top: 10px;
+    width: 100%;
+    transition: 1s all ease-in-out;
+    
+    
+
+}
+#clicked_data>div:hover img{
+    transform: scale(1.5);
+
+}
+
+#image1{
+    width:100%;
+    height:800px
+}
+#right_box{
+
+width: 50%;
+padding: 20px;
+font-family: sans-serif
+
+;
+
+}
+#do{
+    text-decoration: line-through;
+}
+#pin{
+height:40px;
+width:250px
+}
+ul{
+    text-decoration: none;
+}
+#button{
+    
+    margin-top: 50px;
+    font-weight: 100px;
+    /* padding:20px; */
+    
+    
+}
+#btn1{
+    height:60px;
+    width:240px;
+    background-color:#ff3e6c;
+   border-radius: 5px;
+    color: white;
+}
+#btn2{
+    height:60px;
+    width:240px;
+    font-weight:50px;
+    margin-left: 50px;
+    
+   
+}
+#content{
+    color: #908680;
+}
+#recommendation{
+    display:grid;
+        grid-template-columns: repeat(6,15%);
+        grid-gap:2%;
+
+        /* justify-content: space-between; */
+}
+
+
+#dummy{
+      
+   width: 100%;
+    height:60px;
+    background-color:#e9efff;
+     margin-top: 20px; 
+}
+
+#gas{
+    display: flex;
+    height: 100%;
+    margin-left:300px;
+}
+
+
+
+</style>
+<body>
+    <div id="shownavbar"></div>
+    
+  
+     
+
+
+    
+    <!-- <h4 style="padding:15px;"><span style="color: grey;"></span>/Levis Jackets>More By Levis</h4> -->
+    <div id="main">
+        <div id="clicked_data">
+          
+        </div>
+        
+        <div id="right_box">
+            <h3 style="color: red; font:40px; " id="Price"></h3>
+<h2 id="btands" style="color: green;"></h2>
+<h3 style="color: #908680;" id="productname"></h3>
+
+
+<h5 style=color:#1eb0a0;>inclusive of all taxes</h5>
+<h5>SELECT  SIZE</h5>
+<p style="font-weight:600;font-size:20px;"> <span style="border:1px solid;padding:1% 3%" class="ml-3">M</span> <span style="border:1px solid;padding:1% 4%" class="ml-2">L</span> <span style="border:1px solid;padding:1% 3%" class="ml-2">XL</span> <br class="break"><a href="#/" style="color:black" class="ml-3 open-pop-container"></a>
+
+<div id="button">
+    <button id="btn1" onclick="bagItems()">ADD TO BAG</button>
+    <button id="btn2" onclick="bagItems()">WISHLIST</button>
+</div>
+<h3>DELIVERY OPTIONS</h3>
+
+<div id="content">
+    <input type="number"  id="pin" placeholder="Enter a PIN code" >
+    <h5 style="margin-top:1%;">Please enter PIN code to check delivery time & Pay on Delivery Availability</h5></p>
+
+    
+    <ul>
+        <li>100% Original Products</li>
+        <li>Pay on delivery might be available</li>
+        <li>Easy 15 days returns and exchanges</li>
+        <li>Try & Buy might be available</li>
+        <li>Regular fit</li>
+      
+        <li>Polo with classic collar</li>
+        <li>Hand wash</li>
+    </ul>
+</div>
+<h3>BEST OFFERS</h3>
+<p>This product is already at its best price</p>
+<ul>
+    <li>EMI option available</li>
+</ul>
+
+<p style=color:red;margin-top:0px>View Plan</p>
+        </div>
+
+    </div>
+   
+       
+       
+    </div>
+    <div style="height: 100px ; background-color: #908680; width: 100%; margin-top: 20px;"></div>
+<div id="footer"></div>    
+  
+</body>
+</html>
+<script src="../js/previewPage.js" type="module"></script>
+
+<!-- ============================================================================== -->
+
+<script>
+    var cart_Data = JSON.parse(localStorage.getItem("cart_Data")) || [] ;
+
+  var preview_Data = JSON.parse(localStorage.getItem("preview_Data"))
+  console.log(preview_Data)
+  handleDisplayProducts(preview_Data) ;
+
+ function addTowish() {
+        icon.innerHTML = `<i class="fas fa-heart"></i>`;
+        icon.style.color = "#ff425c";
+        wish_btn.style.backgroundColor = "#32323a";
+        wish_btn.style.color = "white";
+        wishlist_data.push(product);
+        localStorage.setItem("wishlist_data",JSON.stringify(wishlist_data));
+      }
+
+
+function handleDisplayProducts(data){
+    document.getElementById("clicked_data").innerHTML = "" ;
+    // console.log(data)
+    let prod = [];
+    prod.push(data)
+    console.log(prod)
+    prod.map(function(el){
+        let price=document.getElementById("Price")
+        price.innerText=`Price :-${el.price}`
+        let productname=document.getElementById("productname")
+        productname.innerText=el.title;
+        let btands=document.getElementById("btands")
+        btands.innerText=el.brand
+        var card = document.createElement("div")
+
+        var img1 = document.createElement("img") ;
+       img1.setAttribute("src", el.images.image1) ;
+        img1.setAttribute("id","image1")
+
+     
+       var img2 = document.createElement("img") ;
+       img2.setAttribute("src", el.images.image2) ;
+
+       var img3 = document.createElement("img") ;
+       img3.setAttribute("src", el.images.image3) ;
+       var img4 = document.createElement("img") ;
+       img4.setAttribute("src", el.images.image4) ;
+
+
+      card.append(img1,img2,img3,img4) ;
+       document.getElementById("clicked_data").append(card)
+    });
+
+}
+
+
+
+function bagItems(){
+    //console.log(("here"))
+   // cartData.push(preview_Data);
+    //localStorage.setItem("cart_Data",JSON.stringify(cartData));
+    window.location.href="basket.html"
+
+    
+}
+
+
+
+  
+
+</script>
